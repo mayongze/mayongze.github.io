@@ -1,15 +1,16 @@
 language: node_js
-node_js:
-- 10.16.3
+node_js: stable
+
 branches:
   only:
   - hexo
 before_install:
+- npm install -g gulp
 - npm install -g hexo-cli
 install:
 - npm install
 script:
-- npm run build
+- gulp build
 after_success:
 - git config --global user.name "mayongze"
 - git config --global user.email "1014057907@qq.com"

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
+    "build:gulp": "gulp build",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
@@ -29,5 +30,15 @@
     "live2d-widget-model-hijiki": "^1.0.5",
     "live2d-widget-model-wanko": "^1.0.5",
     "markdown-it-emoji": "^1.4.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-htmlclean": "^2.7.8",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-uglify": "^2.0.1",
+    "run-sequence": "^1.2.2"
   }
 }
