@@ -1,24 +1,20 @@
 language: node_js
-
 node_js:
-- '6.0.0'
-
+- 6.0.0
 branches:
   only:
-  - hexo                # 只监测 source 分支上的 commit
-
+  - hexo
 before_install:
-- npm install -g hexo-cli # 安装 hexo
-
+- npm install -g hexo-cli
 install:
-- npm install             # 安装额外的插件
-
+- npm install
 script:
-# - git submodule init      # 用于更新主题
-# - git submodule update
 - hexo generate
-
 after_success:
 - git config --global user.name "mayongze"
 - git config --global user.email "1014057907@qq.com"
+- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
 - hexo deploy
+env:
+  global:
+    secure: tgEcX0Cf5J4qymGizxupNkWpmMBNFKrslkROz20cnbvwDETvbM2H65+yQDFHz3Y/hoowEc0lzCbtgsWgGyVTj7cbbxGYEj2lIq9MhAMEMqu1ZM50g06XDxsUtRqGRd4UFMEKTB8OwlBPyE9vgeEAvSrh9FsDHzcS1xlws18Eu42e7tEeJcX3WsdwZgSf2icRjQunaUKdS+mYrZA8QNt3AxTngfcQ2KuhkWH/pxLnVr6Ca3HosZDVpVWn2dtcy1vkV9osGrsmwVks7Rzb6LPefztDuNzpqYyfDfG49b0Z7aq0eAVfuLjJv0DEMRx6XsiPDoAVjTiv4/ZUDgfTC6bv9NVfe/0eIe0sG1ru3yw42UF9eru2U9B+NxlIqOsBiJcp2hH9JOXG3ymN9iX64UU/L1quDKRWBQnustQbSKxeIHBQe2BB2mTXYc1bN5QOnHE4ehggyDoiUK5OFG7bAlJKtDk33164aXO2wpgR55YzRCMbdR8NG26fFWXwkEfUiHs2d+C/QzYybkjqFaxrgjHC3RKFLft8bJuyJ+CbRPgzObVQINwKJqXE0NXygBlOIPWhdasGJzr6oW+QOZApLAr/Xsavxl9kwijqOmRNec07+Bek71ODL8MmW3B68U9zunriRmBgGZ2E3VAQr8BuCMQbIgzj2uU7c/pLomAN4kiJnJI=
