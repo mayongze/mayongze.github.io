@@ -92,7 +92,7 @@ theme: next
 deploy:
   type: git
   repo: 
-    github: https://github.com/mayongze/mayongze.github.io.git #github仓库地址
+    github: https://<token>@github.com/mayongze/mayongze.github.io.git #github仓库地址
     coding: https://git.coding.net/mayongze/mayongze.coding.me.git #coding仓库地址
   branch: master # github分支  
 
