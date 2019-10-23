@@ -9,7 +9,7 @@ before_install:
 install:
 - npm install
 script:
-- hexo generate
+- npm run build
 after_success:
 - git config --global user.name "mayongze"
 - git config --global user.email "1014057907@qq.com"
